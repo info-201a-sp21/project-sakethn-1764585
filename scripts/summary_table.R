@@ -2,8 +2,6 @@
 
 library(dplyr)
 library(stringr)
-install.packages("lubridate")
-library(lubridate)
 
 aave <- read.csv(file = "data/cryptocurrency-historical-prices/coin_Aave.csv",
                  stringsAsFactors = FALSE)
@@ -56,5 +54,10 @@ dates_last_year <- all_coins %>%
 
 summary_table <- dates_last_year %>%
   group_by(Name) %>% 
-  mutate() %>%
-  select(Name)
+  mutate(avg_price_change = round(mean(Close - Open), 5),
+         max_price = round(max(High), 2),
+         min_price = round(min(Low), 2),
+         marketcap_change = round(lead(Marketcap) - (Marketcap), 2),
+         volume_change = round(lead(Volume) - (Volume), 2)) %>%
+  slice(1) %>% 
+  select(Name, avg_price_change, max_price, min_price, marketcap_change, volume_change)

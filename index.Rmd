@@ -6,14 +6,18 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE) 
+library(knitr)
+library(kableExtra)
 source("analysis.R")
 ```
 ## Cryptocurrency Project Overview
 
 ## Summary of Data
 
-Cryptocurrency Summary Information
-
+```{r echo=FALSE}
+knitr::kable(summary_table, col.names = c("Name", "Average Change in Price", "Highest Price", "Lowest Price", "Change in Market Cap", "Change in Volume"), caption = "Cryptocurrency in 2020", "simple")
+```
 
 ## Price and Market Cap Over Time (Interactive)
 ```{r echo=FALSE}
