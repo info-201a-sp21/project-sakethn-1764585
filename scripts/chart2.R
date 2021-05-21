@@ -7,13 +7,13 @@ mkt_bar_graph <- function(coins) {
     slice(1) %>%
     select(Symbol, max_mkt_cap)
   mkt_max <- ggplotly(ggplot(data = max_coin_mktcap) +
-    geom_col(mapping = aes(x=Symbol, y=max_mkt_cap, color = Symbol,
+    geom_col(mapping = aes(x = Symbol, y = max_mkt_cap, color = Symbol,
                            fill = Symbol)) +
     xlab("Coin") +
     ylab("Max Market Cap ($)") +
     ggtitle("Max Market Cap by Coin") +
-      theme(axis.text.x=element_blank()))
-  
+      theme(axis.text.x = element_blank()))
+
   mkt_max
 }
 
@@ -24,20 +24,11 @@ vol_bar_graph <- function(coins) {
     slice(1) %>%
     select(Symbol, max_vol)
   vol_max <- ggplotly(ggplot(data = max_vol_mktcap) +
-                        geom_col(mapping = aes(x=Symbol, y=max_vol, color = Symbol,
-                                               fill = Symbol)) +
+                        geom_col(mapping = aes(x = Symbol, y = max_vol,
+                                               color = Symbol, fill = Symbol)) +
                         xlab("Coin") +
                         ylab("Volume ($ Transacted Daily)") +
                         ggtitle("Max Daily Volume by Coin") +
-                        theme(axis.text.x=element_blank()))
-  
+                        theme(axis.text.x = element_blank()))
   vol_max
 }
-
-max_mkt <- mkt_bar_graph(all_coins)
-max_vol <- vol_bar_graph(all_coins)
-
-
-
-
-

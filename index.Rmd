@@ -45,8 +45,8 @@ When looking at the information rendered out, we found that cryptocurrencies hav
 
 ## Max Market Cap + Volume By Coin
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
-max_mkt
-max_vol
+mkt_bar_graph(all_coins)
+vol_bar_graph(all_coins)
 ```
 
 ## Chart 3
