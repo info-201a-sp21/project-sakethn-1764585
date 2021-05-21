@@ -15,9 +15,11 @@ source("analysis.R")
 
 ## Summary of Data
 
+In order to see the variability of market prices of different cryptocurrencies throughout 2020 which showcased some of the extremes in prices. 
 ```{r echo=FALSE}
 knitr::kable(summary_table, col.names = c("Name", "Average Change in Price", "Highest Price", "Lowest Price", "Change in Market Cap", "Change in Volume"), caption = "Cryptocurrency in 2020", "simple")
 ```
+Something we can take away from this is the extreme varibalilty of prices of crytptocurrency for ethereum there was a drastic difference between the highest price and the lowest price spanning over 700 dollars. We can also see that companies like Dogecoin had extremly low prices with its highest price being .01 cents.
 
 ## Price and Market Cap Over Time (Interactive)
 ```{r echo=FALSE}
