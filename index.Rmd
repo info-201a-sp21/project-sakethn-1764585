@@ -12,16 +12,19 @@ library(kableExtra)
 source("analysis.R")
 ```
 ## Cryptocurrency Project Overview
-Our group hopes to explore the domain of cryptocurrency/blockchain. Cryptocurrency is a form of payment that can be exchanged online for goods and services. Cryptocurrencies work using a technology called blockchain. Blockchain is a decentralized technology spread across many computers that manages and records transactions.
+Our group hopes to explore the domain of cryptocurrency/blockchain. Cryptocurrency is a form of payment that can be exchanged online for goods and services. Cryptocurrencies work using a technology called blockchain. Blockchain is a decentralized technology spread across many computers that manages and records transactions. Cryptocurrencies are generally not issued by any central authority, rendering them almost immune to government interference or manipulation, an appealing aspect of this technology as trust in banks decline.
 
-We aim to answer several questions with our dataset but our main goal is to see what information can the growth of prices in cryptocurrency tell us.
+We aim to answer several questions with our dataset but our **main goal** is to see *what information can the growth of prices in cryptocurrency tell us.*
 
-To achive this we will attempt to answer these following questions:
+### Information on Data Set:
 
-- How has the usage between the two biggest cryptocurrencies (Bitcoin and Ethereum) compared to each other? Is one growing faster than the other Metrics: Market-cap? Or are they growing equally?
-- Which cryptocurrency is the most important in day to day use? 
-- What areas of the world are most involved in the cryptocurrency mining process? How much electricity have they used overtime and how has that impacted certain geological areas?
-- How does price and price growth impact other parts of a cryptocurrency like mining and geological node locations?
+**Cryptocurrency Historical Prices:**
+
+[Link to data set](https://www.kaggle.com/sudalairajkumar/cryptocurrencypricehistory)
+
+This data is taken from [CoinMarketCap](https://coinmarketcap.com/), and it contains the historical prices for different crypto currencies (including daily highs and lows) in dollars. Since it was collected from coinmarketcap, the way that they generated the data is similar to what is described for the dataset above. The exchanges determine prices based on the trading volume of the asset and it’s supply and demand.
+
+
 
 ## Summary of Data
 
