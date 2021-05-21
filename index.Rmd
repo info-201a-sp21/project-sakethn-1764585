@@ -22,6 +22,21 @@ We aim to answer several questions with our dataset but our **main goal** is to 
 
 This data is taken from [CoinMarketCap](https://coinmarketcap.com/), and it contains the historical prices for different crypto currencies (including daily highs and lows) in dollars. Since it was collected from coinmarketcap, the way that they generated the data is similar to what is described for the dataset above. The exchanges determine prices based on the trading volume of the asset and it’s supply and demand.
 
+## Summary Info (Metadata)
+``` {r echo=FALSE, message=FALSE, warning=FALSE}
+summary_info <- get_summary_info(all_coins)
+```
+Number of Coins: `r summary_info$num_coins`
+
+Earliest Date: `r summary_info$earliest_date`
+
+Latest Date: `r summary_info$latest_date`
+
+Most Expensive Coin Price (\$): `r summary_info$most_expensive_coin_price`
+
+Highest Coin's Market Cap (\$): `r summary_info$highest_market_cap`
+
+
 ## Summary of Data
 
 In order to see the variability of market prices of different cryptocurrencies throughout 2020 which showcased some of the extremes in prices. 
