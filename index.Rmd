@@ -6,9 +6,6 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE) 
-library(knitr)
-library(kableExtra)
 source("analysis.R")
 ```
 ## Cryptocurrency Project Overview
@@ -27,14 +24,15 @@ To achive this we will attempt to answer these following questions:
 
 In order to see the variability of market prices of different cryptocurrencies throughout 2020 which showcased some of the extremes in prices. 
 ```{r echo=FALSE}
-knitr::kable(summary_table, col.names = c("Name", "Average Change in Daily Price ($)", "Highest Price ($)", "Lowest Price ($)", "Change in Market Cap ($)", "Average Volume (Daily Transacted Amount in $)"), caption = "Cryptocurrency in 2020", "simple")
+get_summary_kable(all_coins)
 ```
+
 Something we can take away from this is the extreme varibalilty of prices of crytptocurrency for ethereum there was a drastic difference between the highest price and the lowest price spanning over 700 dollars. We can also see that companies like Dogecoin had extremly low prices with its highest price being .01 cents.
 
 ## Price and Market Cap Over Time (Interactive)
 ```{r echo=FALSE}
-marketcap_over_time
-price_over_time
+marketcap_over_time(all_coins)
+price_over_time(all_coins)
 ```
 
 ## Daily Volume Over Time
@@ -43,3 +41,7 @@ volume_over_time
 ```
 
 ## Chart 3
+```{r echo=FALSE}
+draw_plot(bitcoin, "Bitcoin (BTC)")
+draw_plot(ethereum, "Ethereum (ETH)")
+```
