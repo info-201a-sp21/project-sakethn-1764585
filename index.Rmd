@@ -40,8 +40,8 @@ price_over_time(all_coins)
 
 ## Max Market Cap + Volume By Coin
 ```{r echo=FALSE}
-max_mkt
-max_vol
+mkt_bar_graph(all_coins)
+vol_bar_graph(all_coins)
 ```
 
 ## Chart 3
