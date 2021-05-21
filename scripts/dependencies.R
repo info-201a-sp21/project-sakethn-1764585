@@ -6,7 +6,7 @@ library(stringr)
 library(quantmod)
 library(kableExtra)
 
-knitr::opts_chunk$set(echo = TRUE) 
+knitr::opts_chunk$set(echo = TRUE)
 
 data_path <- "data/cryptocurrency-historical-prices/coin_"
 aave <- read.csv(paste0(data_path, "Aave.csv"), stringsAsFactors = FALSE)
