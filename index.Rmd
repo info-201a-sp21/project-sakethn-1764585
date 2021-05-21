@@ -44,10 +44,6 @@ The reason we chose to have a scatter plot was because for this information, the
 When looking at the information rendered out, we found that cryptocurrencies have, overall, been on a upward trend. However, even if overall crypto has been going up, we can clearly see two large peaks in price and marketcap within the charts. This revealed the volatility of crypto but also when crypto was popular among investors. However, these peaks were accompanied by huge drops of price, indicating some type of "hype cycle" or catastrophic event that caused the prices to plummet. Another interesting observation we had was how the marketcap trend of Bitcoin is mirrored closely by almost every other coin. While there are some differences, when looking from afar, the shapes that the marketcap plots are very similar.
 
 ## Max Market Cap + Volume By Coin
-```{r echo=FALSE, message=FALSE, warning=FALSE}
-mkt_bar_graph(all_coins)
-vol_bar_graph(all_coins)
-```
 
 One of the questions we would like to answer is which crypto-currency has the most
 potential to be useful. How do we define usefulness? While there are many definitions
@@ -78,6 +74,10 @@ highest max volume. Distinguishing coins by colors was primarily done because
 the x-axis labels were getting squashed together and it would've been messy to
 read.
 
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+vol_bar_graph(all_coins)
+```
+
 Another question we would like to answer is which crypto-currency has the potential to be most valuable. In this case, the economic definition of value (market cap) can suffice, as 
 crypto currencies are primarily economic assets. 
 
@@ -86,6 +86,9 @@ a good indication of potential market capitalization. However, I do recognize th
 there are more sophisticated proxies for this potential, but I think this proxy
 is good enough for our purposes.
 
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+mkt_bar_graph(all_coins)
+```
 
 ## Candlestick Charts of Bitcoin and Ethereum
 
