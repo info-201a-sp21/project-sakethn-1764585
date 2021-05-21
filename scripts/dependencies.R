@@ -38,4 +38,12 @@ get_date <- function(date) {
     as.Date(substr(date, 1, 10), format = "%Y-%m-%d")
 }
 
+slim_data <- function(data) {
+  data %>%
+    mutate(Date = format(Date, "%Y-%m")) %>%
+    group_by(Date, Symbol) %>%
+    summarise(Close = mean(Close), Marketcap = mean(Marketcap)) %>%
+    mutate(Date = as.Date(paste0(Date, "-01"), format = "%Y-%m-%d"))
+}
+
 all_coins <- all_coins %>% mutate(Date = get_date(Date))

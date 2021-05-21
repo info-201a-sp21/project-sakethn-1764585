@@ -1,7 +1,7 @@
 source("scripts/dependencies.R")
 
 price_over_time <- function(data) {
-  ggplotly(ggplot(data = data) +
+  ggplotly(ggplot(data = slim_data(data)) +
   geom_point(mapping = aes(x = Date, y = Close, color = Symbol)) +
   ggtitle("Price over Time") +
   xlab("Time") +
@@ -10,7 +10,7 @@ price_over_time <- function(data) {
 }
 
 marketcap_over_time <- function(data) {
-  ggplotly(ggplot(data = data) +
+  ggplotly(ggplot(data = slim_data(data)) +
   geom_point(mapping = aes(x = Date, y = Marketcap, color = Symbol)) +
   ggtitle("Market Cap over Time") +
   xlab("Time") +
