@@ -12,7 +12,7 @@ library(kableExtra)
 source("analysis.R")
 ```
 ## Cryptocurrency Project Overview
-
+Our group hopes to explore the domain of cryptocurrency/blockchain. Cryptocurrency is a form of payment that can be exchanged online for goods and services. Cryptocurrencies work using a technology called blockchain. Blockchain is a decentralized technology spread across many computers that manages and records transactions.
 ## Summary of Data
 
 In order to see the variability of market prices of different cryptocurrencies throughout 2020 which showcased some of the extremes in prices. 
