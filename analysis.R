@@ -10,5 +10,6 @@ source("scripts/summary_table.R")
 source("scripts/chart1.R")
 
 # Chart Two 
+source("scripts/chart2.R")
 
 # Chart Three

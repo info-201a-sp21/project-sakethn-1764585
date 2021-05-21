@@ -37,6 +37,9 @@ marketcap_over_time
 price_over_time
 ```
 
-## Chart 2
+## Daily Volume Over Time
+```{r echo=FALSE}
+volume_over_time
+```
 
 ## Chart 3
