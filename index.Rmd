@@ -8,6 +8,7 @@ output: html_document
 ```{r setup, include=FALSE}
 source("analysis.R")
 ```
+
 ## Cryptocurrency Project Overview
 Our group hopes to explore the domain of cryptocurrency/blockchain. Cryptocurrency is a form of payment that can be exchanged online for goods and services. Cryptocurrencies work using a technology called blockchain. Blockchain is a decentralized technology spread across many computers that manages and records transactions. Cryptocurrencies are generally not issued by any central authority, rendering them almost immune to government interference or manipulation, an appealing aspect of this technology as trust in banks decline.
 
@@ -21,25 +22,29 @@ We aim to answer several questions with our dataset but our **main goal** is to 
 
 This data is taken from [CoinMarketCap](https://coinmarketcap.com/), and it contains the historical prices for different crypto currencies (including daily highs and lows) in dollars. Since it was collected from coinmarketcap, the way that they generated the data is similar to what is described for the dataset above. The exchanges determine prices based on the trading volume of the asset and it’s supply and demand.
 
-
-
 ## Summary of Data
 
 In order to see the variability of market prices of different cryptocurrencies throughout 2020 which showcased some of the extremes in prices. 
-```{r echo=FALSE}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 get_summary_kable(all_coins)
 ```
 
 Something we can take away from this is the extreme varibalilty of prices of crytptocurrency for ethereum there was a drastic difference between the highest price and the lowest price spanning over 700 dollars. We can also see that companies like Dogecoin had extremly low prices with its highest price being .01 cents.
 
 ## Price and Market Cap Over Time (Interactive)
-```{r echo=FALSE}
-marketcap_over_time(all_coins)
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 price_over_time(all_coins)
+marketcap_over_time(all_coins)
 ```
 
+The original data set had a lot of points, which made the rendering of the graph quite laggy. The solution to this was to group the data points by month, which is what the graphs show above. So these charts above represent the price and market cap of a multitude of coins over time grouped by a monthly basis. It represents the relationship between cryptocurrency and the US Dollar over the years and helps give insight to how people value the services the coins give.
+
+The reason we chose to have a scatter plot was because for this information, the clarity of a position based encoding helps a user see clear trends over time and clearly compare/contrast different prices and marketcaps of the various coins.
+
+When looking at the information rendered out, we found that cryptocurrencies have, overall, been on a upward trend. However, even if overall crypto has been going up, we can clearly see two large peaks in price and marketcap within the charts. This revealed the volatility of crypto but also when crypto was popular among investors. However, these peaks were accompanied by huge drops of price, indicating some type of "hype cycle" or catastrophic event that caused the prices to plummet. Another interesting observation we had was how the marketcap trend of Bitcoin is mirrored closely by almost every other coin. While there are some differences, when looking from afar, the shapes that the marketcap plots are very similar.
+
 ## Max Market Cap + Volume By Coin
-```{r echo=FALSE}
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 mkt_bar_graph(all_coins)
 vol_bar_graph(all_coins)
 ```
@@ -82,8 +87,17 @@ there are more sophisticated proxies for this potential, but I think this proxy
 is good enough for our purposes.
 
 
-## Chart 3
-```{r echo=FALSE}
+## Candlestick Charts of Bitcoin and Ethereum
+
+Candlestick charts are the most widely accepted and effective ways to represent changes in market activity over time for a given asset, in which case we will be looking at Bitcoin and Ethereum. Each data point, or "candle" in the chart contains information on various price points per day, including the high, low, open, and close prices. A candle with a green body indicates that the price has gone up within that given day, while a red body means the price has gone down.
+
+Below each candlestick chart is an associated volume bar chart, which measures how much of a given coin is traded within each day in USD. From the volume, we can infer which direction the coin is moving next, and is commonly used in tandem with the candlestick chart to understand and predict market trends.
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
 draw_plot(bitcoin, "Bitcoin (BTC)")
 draw_plot(ethereum, "Ethereum (ETH)")
 ```
+
+From the Bitcoin chart, we can see that prior to 2021, the coin has seen peaks (and subsequent drops) at the start of 2018 and mid-2019, before leveling out throughout 2020. In spite of the apparent plateau, after overcoming the steep drop in early 2020, the trading volume began steadily increasing until the end of 2020. This unsurprisingly correlates with the onset of the coronavirus pandemic, and by the start of 2021, massive uptrends grew exponentially as the price of Bitcoin surged dramatically. Just as the coin reached its new high by a wide margin, the price dropped nearly instantly as traders rushed to sell their coins around the peak.
+
+From the Ethereum chart, we can see a fairly similar pattern to that of Bitcoin, with a substantial peak in 2018 followed by a long plateau from 2019 to late 2020. While the price per coin is much lower than Bitcoin, we can see a much clearer indication in 2021 that trading activity and public interest in the coin were reinforcing the unprecedented bull rush in early 2021. Since then, the price has also taken a significant dip, and may continue correcting itself until a new low is reached.
