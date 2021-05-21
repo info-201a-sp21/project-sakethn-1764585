@@ -57,7 +57,7 @@ summary_table <- dates_last_year %>%
   mutate(avg_price_change = round(mean(Close - Open), 5),
          max_price = round(max(High), 2),
          min_price = round(min(Low), 2),
-         marketcap_change = round(lead(Marketcap) - (Marketcap), 2),
-         volume_change = round(lead(Volume) - (Volume), 2)) %>%
+         marketcap_change = round((Marketcap) - lead(Marketcap), 2),
+         volume_change = round(mean(Volume), 2)) %>%
   slice(1) %>% 
   select(Name, avg_price_change, max_price, min_price, marketcap_change, volume_change)

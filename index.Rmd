@@ -16,7 +16,7 @@ source("analysis.R")
 ## Summary of Data
 
 ```{r echo=FALSE}
-knitr::kable(summary_table, col.names = c("Name", "Average Change in Price", "Highest Price", "Lowest Price", "Change in Market Cap", "Change in Volume"), caption = "Cryptocurrency in 2020", "simple")
+knitr::kable(summary_table, col.names = c("Name", "Average Change in Daily Price ($)", "Highest Price ($)", "Lowest Price ($)", "Change in Market Cap ($)", "Average Volume (Daily Transacted Amount in $)"), caption = "Cryptocurrency in 2020", "simple")
 ```
 
 ## Price and Market Cap Over Time (Interactive)
