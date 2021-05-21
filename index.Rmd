@@ -37,9 +37,10 @@ marketcap_over_time
 price_over_time
 ```
 
-## Daily Volume Over Time
+## Max Market Cap + Volume By Coin
 ```{r echo=FALSE}
-volume_over_time
+max_mkt
+max_vol
 ```
 
 ## Chart 3
