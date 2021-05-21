@@ -44,8 +44,20 @@ mkt_bar_graph(all_coins)
 vol_bar_graph(all_coins)
 ```
 
-## Chart 3
+## Candlestick Charts of Bitcoin and Ethereum
+
+Candlestick charts are the most widely accepted and effective ways to represent changes in market activity over time for a given asset, in which case we will be looking at Bitcoin and Ethereum. Each data point, or "candle" in the chart contains information on various price points per day, including the high, low, open, and close prices. A candle with a green body indicates that the price has gone up within that given day, while a red body means the price has gone down.
+
+Below each candlestick chart is an associated volume bar chart, which measures how much of a given coin is traded within each day in USD. From the volume, we can infer which direction the coin is moving next, and is commonly used in tandem with the candlestick chart to understand and predict market trends.
+
 ```{r echo=FALSE}
 draw_plot(bitcoin, "Bitcoin (BTC)")
+```
+
+From the Bitcoin chart, we can see that prior to 2021, the coin has seen peaks (and subsequent drops) at the start of 2018 and mid-2019, before leveling out throughout 2020. In spite of the apparent plateau, after overcoming the steep drop in early 2020, the trading volume began steadily increasing until the end of 2020. This unsurprisingly correlates with the onset of the coronavirus pandemic, and by the start of 2021, massive uptrends grew exponentially as the price of Bitcoin surged dramatically. Just as the coin reached its new high by a wide margin, the price dropped nearly instantly as traders rushed to sell their coins around the peak.
+
+```{r}
 draw_plot(ethereum, "Ethereum (ETH)")
 ```
+
+From the Ethereum chart, we can see a fairly similar pattern to that of Bitcoin, with a substantial peak in 2018 followed by a long plateau from 2019 to late 2020. While the price per coin is much lower than Bitcoin, we can see a much clearer indication in 2021 that trading activity and public interest in the coin were reinforcing the unprecedented bull rush in early 2021. Since then, the price has also taken a significant dip, and may continue correcting itself until a new low is reached.
