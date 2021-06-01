@@ -20,7 +20,7 @@ We aim to answer several questions with our dataset but our **main goal** is to 
 
 [Link to data set](https://www.kaggle.com/sudalairajkumar/cryptocurrencypricehistory)
 
-This data is taken from [CoinMarketCap](https://coinmarketcap.com/), and it contains the historical prices for different crypto currencies (including daily highs and lows) in dollars. Since it was collected from coinmarketcap, the way that they generated the data is similar to what is described for the dataset above. The exchanges determine prices based on the trading volume of the asset and it’s supply and demand.
+This data is taken from [CoinMarketCap](https://coinmarketcap.com/), and it c3ontains the historical prices for different crypto currencies (including daily highs and lows) in dollars. Since it was collected from coinmarketcap, the way that they generated the data is similar to what is described for the dataset above. The exchanges determine prices based on the trading volume of the asset and it’s supply and demand.
 
 ## Summary Info (Metadata)
 ``` {r echo=FALSE, message=FALSE, warning=FALSE}
