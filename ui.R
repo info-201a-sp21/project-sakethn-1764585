@@ -10,13 +10,11 @@
 library(shiny)
 
 # Define UI for application that draws a histogram
-ui <- fluidPage(
-
+  
+  introduction_page <- fluidPage(
     tags$head(
         tags$link(rel = "stylesheet", type = "text/css", href = "app.css")
     ),
-    # Application title
-    titlePanel("Cryptocurrencies: A Data Driven Analysis"),
     p(em("Overview: "), "Cryptocurrencies are a form of currency where the value 
       comes not from a trust in any government/centralized authority, but
       rather from a trust in cryptography and the mathematical properties
@@ -34,3 +32,31 @@ ui <- fluidPage(
     h2("Datasets:"),
     
 )
+  home_page <- tabPanel(
+    "Home Page",
+    titlePanel("Cryptocurrencies: A Data Driven Analysis"),
+    introduction_page
+  )
+  
+  page_one <- tabPanel(
+    "Growth Impact",
+    titlePanel("Impact of Growth"),
+  )
+  
+  page_two <- tabPanel(
+    "Most Important",
+    titlePanel("Most Important in Day to Day Usage")
+  )
+  
+  page_three <- tabPanel(
+    "Bitcoin and Ethereum Compared",
+    titlePanel("Two top cryptocurrencies compared")
+  )
+  
+ui <- navbarPage(
+  "Cryptocurrency Analysis",
+  home_page,
+  page_one,
+  page_two,
+  page_three)
+

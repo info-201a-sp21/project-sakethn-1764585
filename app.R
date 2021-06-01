@@ -1,14 +1,11 @@
-#
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
+# Final Application
 
+# Load Libraries
 library(shiny)
+library(tidyverse)
+library(plotly)
 
+# Use source() to execute the app and define the UI Value and Server Function
 source('ui.R')
 source('server.R')
 
