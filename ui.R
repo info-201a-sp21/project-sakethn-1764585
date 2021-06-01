@@ -60,28 +60,23 @@ library(shiny)
     label = "Choose a Year to Examine",
     choices = years,
     selected = 2021
-  )
-   #selectInput(
-    #inputID = "color_input",
-    #label = "Choose a Color:",
-    #choices = c("red", "orange", "green", "blue", "purple")
-  )
+  ))
   
   # Page two main panel
   page_two_main_content <- mainPanel(theme="app.css",
-                                     plotlyOutput("page_two_chart"),
+                                     plotlyOutput("page_two_chart")
                                      )
   
   # Combine panels to create page 2 (interactive)
   page_two <- tabPanel(theme ="app.css",
     "Importance by Volume",
-    titlePanel("Most Important in Day to Day Usage"),
+    titlePanel("Most Important Cryptocurrencies in Day to Day Usage"),
     sidebarLayout(
       page_two_sidebar_content,
       page_two_main_content),
     fluidPage(theme = "app.css",
               tags$h2("Interpretation"),
-              tags$p("Through this chart it is evident that...")
+              tags$p("Through this chart it is evident that there was a trend of Bitcoin having the highest volume for quite a few years. There is a distinct change however when we look at the 2019 data when Tether passes Bitcoin in volume. Tether has remained the highest in volume since 2019 but due to the nature of cryptocurrencies this is subject to change. Before 2019 Tether was only reaching half the volume that Bitcoin was reaching. Ethereum has maintained a notable volume during these years and is well known in today's wolrd of cryptocurrencies. Bitcoin, Dogecoin, Litecoin, XRP have been present in the cryptocurrency world since 2013 and have somewhat maintained volume through the past eight years.")
               )
     )
   

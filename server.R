@@ -26,7 +26,7 @@ shinyServer(function(input, output) {
             geom_bar(stat = "identity") +
             theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
             labs(title = paste0("Volume during ",input$year_input),
-                 x = "Names", y = "Volume") +
+                 x = "Names of Cryptocurrencies", y = "Volume Over the Year") +
             theme(plot.title = element_text(hjust = 0.5))
         
 

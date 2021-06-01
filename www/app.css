@@ -1,9 +1,25 @@
 h2 {
   text-align: 'center';
+  font-family: Times New Roman;
+}
+h3 {
+  text-align: 'center';
   width: '200px';
+  font-family: Times New Roman;
+  text: white
+  background-color: darkgrey;
+}
+p {
+  font-family: Times New Roman
+}
+
+titlePanel {
+  font-family: Times New Roman;
+  background-color: darkgrey
 }
 
 body {
   color: 'blue';
+  font-family: Times New Roman
   background-color: 'green';
 }
