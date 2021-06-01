@@ -9,8 +9,7 @@
 
 library(shiny)
 
-# Define UI for application that draws a histogram
-  
+##### Home Page ##### 
   introduction_page <- fluidPage(
     tags$head(
         tags$link(rel = "stylesheet", type = "text/css", href = "app.css")
@@ -30,29 +29,74 @@ library(shiny)
          impact other parts of a cryptocurrency like mining and geological node
          locations?"),
     h2("Datasets:"),
-    
 )
+  
   home_page <- tabPanel(
     "Home Page",
     titlePanel("Cryptocurrencies: A Data Driven Analysis"),
     introduction_page
   )
   
+##### Interactive Page One #####   
   page_one <- tabPanel(
     "Growth Impact",
     titlePanel("Impact of Growth"),
   )
   
-  page_two <- tabPanel(
-    "Most Important",
-    titlePanel("Most Important in Day to Day Usage")
+ 
+##### Interactive Page Two #####   
+  # Create data frame that includes specific years 
+  data_by_year <- all_coins %>% 
+    group_by(Date) %>% 
+    mutate(Date = substr(Date, 0,4))
+  
+  years <- c("2013", "2014", "2015", "2016", "2017", "2018",
+             "2019", "2020", "2021")
+    
+  # Page two side bar
+  page_two_sidebar_content <- sidebarPanel(theme ="app.css",
+  selectInput(
+    inputId = "year_input",
+    label = "Choose a Year to Examine",
+    choices = years,
+    selected = 2021
+  )
+   #selectInput(
+    #inputID = "color_input",
+    #label = "Choose a Color:",
+    #choices = c("red", "orange", "green", "blue", "purple")
   )
   
+  # Page two main panel
+  page_two_main_content <- mainPanel(theme="app.css",
+                                     plotlyOutput("page_two_chart"),
+                                     )
+  
+  # Combine panels to create page 2 (interactive)
+  page_two <- tabPanel(theme ="app.css",
+    "Importance by Volume",
+    titlePanel("Most Important in Day to Day Usage"),
+    sidebarLayout(
+      page_two_sidebar_content,
+      page_two_main_content),
+    fluidPage(theme = "app.css",
+              tags$h2("Interpretation"),
+              tags$p("Through this chart it is evident that...")
+              )
+    )
+  
+  
+  
+  # Create chart two for second interactive page
+  
+  ##### Interactive Page Three ##### 
   page_three <- tabPanel(
     "Bitcoin and Ethereum Compared",
     titlePanel("Two top cryptocurrencies compared")
-  )
+  ) 
   
+
+ 
 ui <- navbarPage(
   "Cryptocurrency Analysis",
   home_page,
