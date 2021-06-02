@@ -16,10 +16,10 @@ sidebarLayout(
       )),
   mainPanel(
     plotlyOutput(
-      outputId = "priceovertime"
+      outputId = "page_one_chart_price"
     ),
     plotlyOutput(
-      outputId = "marketcapovertime"
+      outputId = "page_one_chart_market"
     )
     ),
 position = "left")
