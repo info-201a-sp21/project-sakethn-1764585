@@ -11,7 +11,9 @@ sidebarLayout(
                      "Eos" = 'EOS', "Ethereum" = 'ETH', "Iota" = 'MIOTA',
                      "Litecoin" = 'LTC', "Monero" = 'XMR', "Polkadot" =
                        'DOT', "Tether" = 'USDT', "USD Coin" = 'USDC', 
-                     "XRP" = 'XRP'))),
+                     "XRP" = 'XRP'),
+      selected = 'DOGE'
+      )),
   mainPanel(
     plotlyOutput(
       outputId = "priceovertime"
