@@ -185,9 +185,9 @@ summary <- tabPanel(
   p(sum1),
   p(sum2),
   p(sum3),
-  img(src = "Page_3/both_2018.png"),
+  img(src = "https://ibb.co/2ncRXT2"),
   p(sum4),
-  img(src = "Page_3/both_2021.png"),
+  img(src = "https://ibb.co/5564D7V"),
   p(sum5)
 )
 
