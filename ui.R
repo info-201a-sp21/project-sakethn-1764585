@@ -188,6 +188,7 @@ summary <- tabPanel(
     the highest volume for quite a few years. There is a distinct change however
     when we look at the 2019 data when Tether passes Bitcoin in volume."),
   h2("Bitcoin vs Ethereum"),
+  hr(),
   p(sum1),
   p(sum2),
   p(sum3),
