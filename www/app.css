@@ -22,17 +22,18 @@ body {
   color: 'blue';
   font-family: Times New Roman
   background-color: 'green';
+  margin: 0;
 }
 
 /* Adding background flair */
 .bgStyle {
-  background: 'url(https://wallpaper.dog/large/20370949.jpg) rgba(0, 0, 0, 0.65)';
-  background-position: "center";
-  background-size: "cover";
-  background-repeat: "no-repeat";
-  width: "100vw";
-  height: "100vh";
-  background-blend-mode: "multiply"
+  background: url(https://wallpaper.dog/large/20370949.jpg) rgba(0, 0, 0, 0.65);
+  background-position: left top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  background-blend-mode: multiply;
 }
 
 /* Making the home page pop */
@@ -40,8 +41,6 @@ body {
   position: absolute;
   top: 50%;
   transform: translate(0, -50%);
-  padding: 10px;
-  box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
-  filter: blur(10px);
-  background: inherit;
+  padding: 50px;
+  color: white;
 }

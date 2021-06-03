@@ -9,22 +9,31 @@
 
 library(shiny)
 library(plotly)
-<<<<<<< HEAD
 
 # Load Data
 source("scripts/dependencies.R")
-=======
->>>>>>> c80e0c5a5858db4ef41aed407d786b7f5ae855f9
 
 ##### Home Page #####
 introduction_page <- fluidPage(
   tags$head(
-    tags$link(rel = "stylesheet", type = "text/css", href = "app.css")
+    tags$link(rel = "stylesheet", type = "text/css", href = "app.css"),
+    tags$style(HTML("
+                    body {
+                      margin: 0;
+                    }"))
   ),
-  p(em("Overview: "), "Cryptocurrencies are a form of currency where the value
+  tags$div(tags$div(
+    h1("Cryptocurrencies: A Data Driven Analysis"),
+    p(em("Overview: "), "Cryptocurrencies are a form of currency where the value
       comes not from a trust in any government/centralized authority, but
       rather from a trust in cryptography and the mathematical properties
-      of a data structure known as the blockchain. "),
+      of a data structure known as the blockchain. ") %>%
+      tagAppendAttributes(style = 'width: 500px;'),
+  ) %>%
+    tagAppendAttributes(class = 'titleStyle')) %>%
+    tagAppendAttributes(class = 'bgStyle')
+  
+  
 )
 
 ##### About Page #####
@@ -54,7 +63,6 @@ about_page <- tabPanel(
 
 home_page <- tabPanel(
   "Home Page",
-  titlePanel("Cryptocurrencies: A Data Driven Analysis"),
   introduction_page
 )
 
