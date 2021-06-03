@@ -178,6 +178,9 @@ summary <- tabPanel(
   titlePanel("Important Takeaways"),
   h2("Growth Impact"),
   h2("Importance by Volume"),
+  p("Through this chart it is evident that there was a trend of Bitcoin having
+    the highest volume for quite a few years. There is a distinct change however
+    when we look at the 2019 data when Tether passes Bitcoin in volume."),
   h2("Bitcoin vs Ethereum"),
   p(sum1),
   p(sum2),
