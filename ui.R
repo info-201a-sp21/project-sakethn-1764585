@@ -50,10 +50,10 @@ p1_side<-sidebarPanel(
                    "Chainlink" = 'LINK', "Cosmos" = 'ATOM', "Doge" = 'DOGE',
                    "Eos" = 'EOS', "Ethereum" = 'ETH', "Iota" = 'MIOTA',
                    "Litecoin" = 'LTC', "Monero" = 'XMR', "Polkadot" =
-                     'DOT', "Tether" = 'USDT', "USD Coin" = 'USDC', 
+                     'DOT', "Tether" = 'USDT', "USD Coin" = 'USDC',
                    "XRP" = 'XRP'),
     selected = 'DOGE'
-  )) 
+  ))
 #Page One main Panel
 
 p1_main<-  mainPanel(
@@ -72,7 +72,7 @@ page_one <- tabPanel(
     mainPanel = p1_main
   ),
   position = "left"
-) 
+)
 
 ##### Interactive Page Two #####
 # Create data frame that includes specific years
@@ -132,6 +132,5 @@ ui <- navbarPage(
   home_page,
   page_one,
   page_two,
-  page_three,
-  selected = "Bitcoin vs. Ethereum"
+  page_three
 )

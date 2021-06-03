@@ -55,5 +55,4 @@ intro <- paste(
 obs <- paste("Sentence 1.", "Sentence 2.")
 
 ##### Analysis #####
-analysis <- paste("Sentence 1.",
-                   "Sentence 2.")
+analysis <- paste("Sentence 1.", "Sentence 2.")
