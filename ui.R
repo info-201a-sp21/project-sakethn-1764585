@@ -9,6 +9,7 @@
 
 library(shiny)
 library(plotly)
+source("scripts/dependencies.R")
 
 ##### Home Page #####
 introduction_page <- fluidPage(

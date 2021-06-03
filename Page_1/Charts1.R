@@ -3,12 +3,12 @@ source("scripts/chart1.R")
 library(dplyr)
 
 draw_da_plot_price<-function(df, selected_coin){
-  
+  # Formatting Data with proper dates and adding user input filter
   bitcoin <- bitcoin %>% mutate(Date = get_date(Date))
   user_df <-slim_data(df)
   
   formatted_data<-reactive({dplyr::filter(user_df, Symbol %in% selected_coin)})
-  
+  # Plotting charts using bitcoin data and user filtered data 
     other_coin_chart<-ggplotly(ggplot(data = formatted_data()) +
                                  geom_point(mapping = aes(x = Date, y = Close, fill = Symbol)) +
                                  ggtitle("Price over Time") +
@@ -21,6 +21,7 @@ draw_da_plot_price<-function(df, selected_coin){
                               xlab("Time") +
                               ylab("Price ($)") +
                               scale_x_date(date_labels = "%b-%Y"))
+    #Combining plots to make a single comparison plot with changing similar x-axis
     plots<-subplot(bitcoin_chart, other_coin_chart,
                    heights = c(0.6, 0.4),
                    nrows = 2,
@@ -32,6 +33,7 @@ draw_da_plot_price<-function(df, selected_coin){
 }
 
 draw_da_plot_market<- function(df, selected_coin){
+  # Same steps as the function before but just changing the y axis to be marketcap instead
   bitcoin <- bitcoin %>% mutate(Date = get_date(Date))
   user_df <-slim_data(df)
   
