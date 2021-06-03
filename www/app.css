@@ -23,3 +23,25 @@ body {
   font-family: Times New Roman
   background-color: 'green';
 }
+
+/* Adding background flair */
+.bgStyle {
+  background: 'url(https://wallpaper.dog/large/20370949.jpg) rgba(0, 0, 0, 0.65)';
+  background-position: "center";
+  background-size: "cover";
+  background-repeat: "no-repeat";
+  width: "100vw";
+  height: "100vh";
+  background-blend-mode: "multiply"
+}
+
+/* Making the home page pop */
+.titleStyle {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  padding: 10px;
+  box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+  filter: blur(10px);
+  background: inherit;
+}
