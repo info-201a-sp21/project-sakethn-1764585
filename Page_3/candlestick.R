@@ -1,8 +1,9 @@
 library(dplyr)
+library(plotly)
 source("scripts/dependencies.R")
 
 # reference https://plotly.com/r/candlestick-charts
-draw_plot <- function(dframe, crypto_name, start_year = 2013, end_year = 2020) {
+draw_plot <- function(dframe, crypto_name, start_year = 2015, end_year = 2021) {
   # extract year from all dates in dframe
   dframe <- dframe %>%
     mutate(year = format(as.Date(pull(., Date)), "%Y")) %>%
@@ -51,6 +52,7 @@ draw_plot <- function(dframe, crypto_name, start_year = 2013, end_year = 2020) {
           shareX = TRUE,
           titleY = TRUE) %>%
     layout(title = paste(crypto_name, "Candlestick Chart"),
+           margin = list(l = 60, r = 20, t = 60, b = 70),
            legend = list(orientation = "h",
                          x = 0.5,
                          y = 1,

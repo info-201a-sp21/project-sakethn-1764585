@@ -6,6 +6,7 @@ source("ui.R")
 
 # Load Library
 library(shiny)
+library(dplyr)
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
@@ -43,17 +44,17 @@ shinyServer(function(input, output) {
     ##### PAGE THREE CHART #####
     source("Page_3/candlestick.R")
 
+    draw_plot_reactive <- function(input_range, dframe, crypto_name) {
+        start_year <- input_range[1]
+        end_year <- input_range[2]
+        p <- draw_plot(dframe, crypto_name, start_year, end_year)
+    }
+
     output$plot_3_btc <- renderPlotly({
-        time_frame <- input$year_range
-        start_year <- time_frame[1]
-        end_year <- time_frame[2]
-        draw_plot(bitcoin, "Bitcoin", start_year, end_year)
+        pr <- draw_plot_reactive(input$year_range, bitcoin, "Bitcoin")
     })
 
     output$plot_3_eth <- renderPlotly({
-        time_frame <- input$year_range
-        start_year <- time_frame[1]
-        end_year <- time_frame[2]
-        draw_plot(ethereum, "Ethereum", start_year, end_year)
+        pr <- draw_plot_reactive(input$year_range, ethereum, "Ethereum")
     })
 })

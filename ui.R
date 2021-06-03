@@ -84,33 +84,11 @@ page_two <- tabPanel(theme ="app.css",
 ##### Interactive Page Three #####
 
 source("Page_3/candlestick.R")
-
-side <- sidebarPanel(
-  #remove sub-ticks in slider
-  tags$style(
-    type = "text/css",
-    ".irs-grid-pol.small {height: 0px;}"
-  ),
-  # create slider to select years
-  sliderInput(
-    inputId = "year_range",
-    label = "Select Time Frame",
-    min = 2013, max = 2020,
-    value = c(2013, 2020),
-    sep = ""
-  )
-)
-
-main <- mainPanel(
-  h2("Graphs"),
-  plotlyOutput("plot_3_btc"),
-  br(),
-  plotlyOutput("plot_3_eth")
-)
+source("Page_3/helper.R")
 
 page_three <- tabPanel(
   title = "Bitcoin vs. Ethereum",
-  titlePanel(paste0("Comparing the Top Two Cryptocurrencies")),
+  titlePanel("Comparing Volatility over Time for the Top Two Cryptocurrencies"),
   sidebarLayout(
     sidebarPanel = side,
     mainPanel = main
@@ -123,4 +101,6 @@ ui <- navbarPage(
   home_page,
   page_one,
   page_two,
-  page_three)
+  page_three,
+  selected = "Bitcoin vs. Ethereum"
+)
