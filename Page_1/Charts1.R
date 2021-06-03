@@ -1,11 +1,11 @@
 source("scripts/dependencies.R")
 source("scripts/chart1.R")
+library(dplyr)
 
 draw_da_plot_price<-function(df, selected_coin){
   
   bitcoin <- bitcoin %>% mutate(Date = get_date(Date))
-  user_df<- df%>% mutate(Date = get_date(Date))
-  user_df <-slim_data(user_df)
+  user_df <-slim_data(df)
   
   formatted_data<-reactive({dplyr::filter(user_df, Symbol %in% selected_coin)})
   
@@ -33,8 +33,7 @@ draw_da_plot_price<-function(df, selected_coin){
 
 draw_da_plot_market<- function(df, selected_coin){
   bitcoin <- bitcoin %>% mutate(Date = get_date(Date))
-  user_df<- df%>% mutate(Date = get_date(Date))
-  user_df <-slim_data(user_df)
+  user_df <-slim_data(df)
   
   formatted_data<-reactive({dplyr::filter(user_df, Symbol %in% selected_coin)})
   

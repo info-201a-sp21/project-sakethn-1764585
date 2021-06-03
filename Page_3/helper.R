@@ -1,6 +1,18 @@
 ##### helper.R Description #####
 #
 
+##### Introduction #####
+intro <- paste(
+  "Candlestick charts are very useful to investors, as they can be used to see market prices over time, how much trading activity is going on, and countless patterns that can inform their decisions to buy, sell, or hold onto their coins. ",
+  br(), "", br(),
+  "The question we want to look into is, how does the volatility compare between Bitcoin and Ethereum between 2013 and 2021?")
+
+##### Observations #####
+obs <- paste("Sentence 1.", "Sentence 2.")
+
+##### Analysis #####
+analysis <- paste("Sentence 1.", "Sentence 2.")
+
 ##### Page Layout #####
 side <- sidebarPanel(
   width = 6,
@@ -45,14 +57,3 @@ main <- mainPanel(
   p(analysis)
 )
 
-##### Introduction #####
-intro <- paste(
-  "Candlestick charts are very useful to investors, as they can be used to see market prices over time, how much trading activity is going on, and countless patterns that can inform their decisions to buy, sell, or hold onto their coins. ",
-  br(), "", br(),
-  "The question we want to look into is, how does the volatility compare between Bitcoin and Ethereum between 2013 and 2021?")
-
-##### Observations #####
-obs <- paste("Sentence 1.", "Sentence 2.")
-
-##### Analysis #####
-analysis <- paste("Sentence 1.", "Sentence 2.")
