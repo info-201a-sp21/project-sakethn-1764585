@@ -24,26 +24,28 @@ introduction_page <- fluidPage(
 
 )
 
-##### About Page #####
+##### About Page #####s
 about_content <- fluidPage(
-  h2("Questions:"),
-  p("Here are some of the questions we would like to answer regarding
+    h2("Questions:"),
+    p("Here are some of the questions we would like to answer regarding
       these technologies"),
-  tags$li("Which cryptocurrency is the most important in day to day use?"),
-  tags$li("What areas of the world are most involved in the cryptocurrency
+    tags$li("Which cryptocurrency is the most important in day to day use?"),
+    tags$li("What areas of the world are most involved in the cryptocurrency
     mining process? How much electricity have they used overtime and how has
     that impacted certain geological areas?"),
-  tags$li("How does price and price growth
+    tags$li("How does price and price growth
          impact other parts of a cryptocurrency like mining and geological node
          locations?"),
-  h2("Datasets:"),
-  tags$a("Cryptocurrency Historical Datasets",
-         href =
-           "https://www.kaggle.com/sudalairajkumar/cryptocurrencypricehistory"),
-  tags$br(),
-  tags$a("Ethereum Blockchain Data",
-         href =
-           "https://www.kaggle.com/kingburrito666/ethereum-historical-data")
+    img(src = "coins.png") %>%
+      tagAppendAttributes(style = "width: 600px"),
+    h2("Datasets:"),
+    tags$a("Cryptocurrency Historical Datasets",
+           href =
+             "https://www.kaggle.com/sudalairajkumar/cryptocurrencypricehistory"),
+    tags$br(),
+    tags$a("Ethereum Blockchain Data",
+           href =
+             "https://www.kaggle.com/kingburrito666/ethereum-historical-data")
 )
 
 about_page <- tabPanel(
