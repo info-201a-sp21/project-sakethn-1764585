@@ -13,31 +13,44 @@ introduction_page <- fluidPage(
       of a data structure known as the blockchain.") %>%
       tagAppendAttributes(style = "width: 500px;"),
   ) %>%
-    tagAppendAttributes(class = "titleStyle")) %>%
-    tagAppendAttributes(class = "bgStyle")
-
-
+    tagAppendAttributes(class = "titleStyle"))
 )
 
-##### About Page #####
+##### About Page #####s
 about_content <- fluidPage(
   includeCSS("www/app.css"),
   h2("Questions:"),
   p("Here are some of the questions we would like to answer regarding
-      these technologies"),
+    these technologies"),
   tags$li("Which cryptocurrency is the most important in day to day use?"),
   tags$li("What areas of the world are most involved in the cryptocurrency
-    mining process? How much electricity have they used overtime and how has
-    that impacted certain geological areas?"),
+  mining process? How much electricity have they used overtime and how has
+  that impacted certain geological areas?"),
   tags$li("How does price and price growth
-         impact other parts of a cryptocurrency like mining and geological node
-         locations?"),
+       impact other parts of a cryptocurrency like mining and geological node
+       locations?"),
+  tags$li("Is there any use to decentralize money and services? Should monetary
+          power be extremely concentrated in one place for efficiency’s
+          sake?"),
+  tags$li("Can you think of any services that could benefit from being able to
+          transact with people directly rather than through intermediaries?
+          Are there only illegal activities?"),
+  img(src = "coins.png") %>%
+    tagAppendAttributes(style = "width: 600px"),
   h2("Datasets:"),
-  tags$a("Cryptocurrency Historical Datasets",
+  tags$a(tags$strong("Cryptocurrency Historical Datasets - "),
+         "A very comprehensive data set on
+         cryptocurrency prices and price related statistics. It stretches back
+         as far as 2013 and this data was sourced from various places like
+         the actual crypto blockchains and various exchanges.",
          href =
            "https://www.kaggle.com/sudalairajkumar/cryptocurrencypricehistory"),
   tags$br(),
-  tags$a("Ethereum Blockchain Data",
+  tags$a(tags$strong("Ethereum Blockchain Data - "),
+         "A very comprehensive data set on the
+         Ethereum Blockchain, the biggest competitor to Bitcoin and with the
+         ability to use smart contracts. The data was sourced from the actual
+         Ethereum blockcahin and various exchanges with Ethereum.",
          href =
            "https://www.kaggle.com/kingburrito666/ethereum-historical-data")
 )
@@ -50,7 +63,7 @@ about_page <- tabPanel(
 home_page <- tabPanel(
   "Home Page",
   introduction_page
-)
+) %>% tagAppendAttributes(class = "bgStyle")
 
 ##### Interactive Page One #####
 source("scripts/page1.R")
@@ -112,6 +125,7 @@ data_by_year <- all_coins %>%
   group_by(Date) %>%
   mutate(Date = substr(Date, 0, 4))
 
+# Available years to select
 years <- c("2013", "2014", "2015", "2016", "2017", "2018",
            "2019", "2020", "2021")
 
@@ -137,6 +151,14 @@ page_two <- tabPanel(
     page_two_main_content),
   fluidPage(
     includeCSS("www/app.css"),
+    tags$h2("Chart Encoding"),
+    tags$p("Through this chart, we planned to determine a cryptocurrency's
+           relative use was through the volume of trades happening. We reasoned
+           that the more trades meant that more people were actively using
+           cryptocurrencies for a central purpose, the transaction of value.
+           We also chose to encode the graph as a bar chart because it allows
+           us to clearly see the differences between different volumes as
+           position is an easier way for people to read differences in."),
     tags$h2("Interpretation"),
     tags$p(paste0(
       "Through this chart it is evident that there was a trend of Bitcoin"
@@ -174,12 +196,24 @@ summary <- tabPanel(
   p("Through this page we can see that the market trends of Bitcoin, the
   largest cryptocurrency does tend to influence the patterns of smaller coins.
   At the very least though we can see when interest in crypto currency has been
-  the highest, particularlly the end of 2017 and the end of 2020 til now."),
+  the highest, particularlly the end of 2017 and the end of 2020 til now.
+  This surprised us at first but we soon came to find good reason behind it.
+  Bitcoin was a pioneer in making digital currency \"Legimate\" and has one
+  of the most loyal user bases of any new coin. With its rich history and
+  first mover's advantage, it is only natural that it is still leading.
+  However with new compelling cryptocurrencies on the rise, we wonder how long
+  this will last."),
   h2("Importance by Volume"),
   hr(),
   p("Through this chart it is evident that there was a trend of Bitcoin having
     the highest volume for quite a few years. There is a distinct change however
-    when we look at the 2019 data when Tether passes Bitcoin in volume."),
+    when we look at the 2019 data when Tether passes Bitcoin in volume. This is
+    also a surprising takeway. While Bitcoin has a community that often
+    antagonizes the US dollar, it is shocking that Tether, a US based crypto, is
+    the most traded coin. It seems that the volitlity of cryptocurrencies is
+    something that even its loyal users can't escape and sometimes something
+    more stable is needed, like Tether or USDC. However, with cryptocurrency
+    being adopted by big firms, will this stability situation change?"),
   h2("Bitcoin vs Ethereum"),
   hr(),
   p(sum1),

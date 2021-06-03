@@ -1,12 +1,7 @@
-/* Adding background flair */
+/* Background for homepage */
 .bgStyle {
-  background: url(https://wallpaper.dog/large/20370949.jpg) rgba(0, 0, 0, 0.65);
-  background-position: left top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100vw;
-  height: 100vh;
-  background-blend-mode: multiply;
+  background-image: url(https://wallpaper.dog/large/20370949.jpg);
+  height: 85vh;
 }
 
 /* Making the home page pop */
@@ -20,11 +15,29 @@
 
 /* Text glow */
 .glow {
-  text-shadow: 2px 2px 25px white;
+  text-shadow: 0 0 25px white;
   font-size: 8rem;
 }
 
+/* Have content focused */
 .thin-center {
   margin: auto;
-  width: 75%;
+  width: 65%;
+}
+
+/* Make headings unique font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Helvetica";
+  font-weight: bold;
+}
+
+/* Better bolding */
+strong {
+  color: steelblue;
+  font-weight: bold;
+}
+
+/* Unique hovering on links. */
+a:hover {
+  color: salmon;
 }
