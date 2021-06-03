@@ -11,15 +11,34 @@ library(shiny)
 library(plotly)
 source("scripts/dependencies.R")
 
+# Load Data
+source("scripts/dependencies.R")
+
 ##### Home Page #####
 introduction_page <- fluidPage(
   tags$head(
-    tags$link(rel = "stylesheet", type = "text/css", href = "app.css")
+    tags$link(rel = "stylesheet", type = "text/css", href = "app.css"),
+    tags$style(HTML("
+                    body {
+                      margin: 0;
+                    }"))
   ),
-  p(em("Overview: "), "Cryptocurrencies are a form of currency where the value
+  tags$div(tags$div(
+    h1("Cryptocurrencies: A Data Driven Analysis"),
+    p(em("Overview: "), "Cryptocurrencies are a form of currency where the value
       comes not from a trust in any government/centralized authority, but
       rather from a trust in cryptography and the mathematical properties
-      of a data structure known as the blockchain. "),
+      of a data structure known as the blockchain. ") %>%
+      tagAppendAttributes(style = 'width: 500px;'),
+  ) %>%
+    tagAppendAttributes(class = 'titleStyle')) %>%
+    tagAppendAttributes(class = 'bgStyle')
+  
+  
+)
+
+##### About Page #####
+about_content <- fluidPage(
   h2("Questions:"),
   p("Here are some of the questions we would like to answer regarding
       these technologies"),
@@ -31,11 +50,20 @@ introduction_page <- fluidPage(
          impact other parts of a cryptocurrency like mining and geological node
          locations?"),
   h2("Datasets:"),
+  tags$a("Cryptocurrency Historical Datasets",
+         href="https://www.kaggle.com/sudalairajkumar/cryptocurrencypricehistory"),
+  tags$br(),
+  tags$a("Ethereum Blockchain Data",
+         href="https://www.kaggle.com/kingburrito666/ethereum-historical-data")
+)
+
+about_page <- tabPanel(
+  "About",
+  about_content
 )
 
 home_page <- tabPanel(
   "Home Page",
-  titlePanel("Cryptocurrencies: A Data Driven Analysis"),
   introduction_page
 )
 
@@ -132,6 +160,7 @@ page_three <- tabPanel(
 ui <- navbarPage(
   "Cryptocurrency Analysis",
   home_page,
+  about_page,
   page_one,
   page_two,
   page_three
