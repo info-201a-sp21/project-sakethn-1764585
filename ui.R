@@ -161,7 +161,7 @@ page_two <- tabPanel(
 )
 
 ##### Interactive Page Three #####
-source("Page_3/helper.R")
+source("scripts/page3.R")
 
 page_three <- tabPanel(
   title = "Bitcoin vs. Ethereum",

@@ -1,5 +1,5 @@
-##### helper.R Description #####
-#
+##### Page 3 Helping functions #####
+
 
 ##### Introduction #####
 intro <- paste(
@@ -60,7 +60,7 @@ main <- mainPanel(
   p(HTML(obs))
 )
 
-##### Summary #####
+##### Summaries #####
 
 sum1 <- "In response to the question, \"how does the volatility of Bitcoin and Ethereum compare over time between 2015 and 2021?\", we can say that Ethereum has generally shown higher volatility and is thus a riskier investment than Bitcoin."
 

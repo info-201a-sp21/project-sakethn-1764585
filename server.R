@@ -40,7 +40,7 @@ server <- shinyServer(function(input, output) {
     })
 
     ##### PAGE THREE CHART #####
-    source("Page_3/candlestick.R")
+    source("scripts/candlestick-chart.R")
 
     draw_plot_reactive <- function(input_range, dframe, crypto_name) {
         start_year <- input_range[1]
