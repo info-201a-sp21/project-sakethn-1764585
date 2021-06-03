@@ -193,8 +193,10 @@ summary <- tabPanel(
   p(sum2),
   p(sum3),
   img(src = "both_2018.png"),
+  br(),
   p(sum4),
   img(src = "both_2021.png"),
+  br(),
   p(sum5)
 )
 
