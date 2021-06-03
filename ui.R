@@ -34,8 +34,8 @@ introduction_page <- fluidPage(
   ) %>%
     tagAppendAttributes(class = 'titleStyle')) %>%
     tagAppendAttributes(class = 'bgStyle')
-  
-  
+
+
 )
 
 ##### About Page #####
@@ -93,12 +93,12 @@ p1_main<-  mainPanel(
   hr(),
   p(introduction),
   br(),
-                     
+
   plotlyOutput("page_one_chart_price"),
   br(),
   plotlyOutput("page_one_chart_market"),
   br(),
-  
+
   h3("Why compare Bitcoin?"),
   hr(),
   p(question),
@@ -178,7 +178,14 @@ summary <- tabPanel(
   titlePanel("Important Takeaways"),
   h2("Growth Impact"),
   h2("Importance by Volume"),
-  h2("Bitcoin vs Ethereum")
+  h2("Bitcoin vs Ethereum"),
+  p(sum1),
+  p(sum2),
+  p(sum3),
+  img(src = "Page_3/both_2018.png"),
+  p(sum4),
+  img(src = "Page_3/both_2021.png"),
+  p(sum5)
 )
 
 ##### Navigation Bar #####
