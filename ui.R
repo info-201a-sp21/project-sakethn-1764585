@@ -203,6 +203,13 @@ summary <- tabPanel(
   first mover's advantage, it is only natural that it is still leading.
   However with new compelling cryptocurrencies on the rise, we wonder how long
   this will last."),
+  br(),
+  h3("Bitcoin vs Ethereum"),
+  img(src = "btc_eth.png"),
+  h3("Bitcoin vs Cardano"),
+  img(src = "btc_ada.png"),
+  h3("Bitcoin vs Litecoin"),
+  img(src = "btc_ltc.png"),
   h2("Importance by Volume"),
   hr(),
   p("Through this chart it is evident that there was a trend of Bitcoin having
@@ -214,6 +221,7 @@ summary <- tabPanel(
     something that even its loyal users can't escape and sometimes something
     more stable is needed, like Tether or USDC. However, with cryptocurrency
     being adopted by big firms, will this stability situation change?"),
+  img(src = "vol_2017_2019.png"),
   h2("Bitcoin vs Ethereum"),
   hr(),
   p(sum1),
