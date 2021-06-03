@@ -158,7 +158,10 @@ page_three <- tabPanel(
 
 summary <- tabPanel(
   title = "Takeaways",
-  titlePanel("Important Takeaways")
+  titlePanel("Important Takeaways"),
+  h2("Growth Impact"),
+  h2("Importance by Volume"),
+  h2("Bitcoin vs Ethereum")
 )
 
 ##### Navigation Bar #####
