@@ -177,6 +177,11 @@ summary <- tabPanel(
   title = "Takeaways",
   titlePanel("Important Takeaways"),
   h2("Growth Impact"),
+  hr(),
+  p("Through this page we can see that the market trends of Bitcoin, the largest cryptocurrency
+    does tend to influence the patterns of smaller coins. At the very least though we can see when
+    interest in crypto currency has been the highest, particularlly the end of 2017 and the end of 2020
+    til now."),
   h2("Importance by Volume"),
   p("Through this chart it is evident that there was a trend of Bitcoin having
     the highest volume for quite a few years. There is a distinct change however
