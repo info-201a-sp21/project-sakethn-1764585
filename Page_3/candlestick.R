@@ -12,7 +12,7 @@ draw_plot <- function(dframe, crypto_name, start_year = 2015, end_year = 2021) {
 
   # create candlestick plot (high, low, open, close)
   candle_plot <- plot_ly(data = dframe,
-                         name = "Price Changes per Week",
+                         name = "Price Changes per Day",
                          x = ~Date,
                          type = "candlestick",
                          open = ~Open,
@@ -41,7 +41,7 @@ draw_plot <- function(dframe, crypto_name, start_year = 2015, end_year = 2021) {
                       type = "bar",
                       color = ~direction,
                       colors = c("green", "red")) %>%
-    layout(xaxis = list(title = "Date (yr)",
+    layout(xaxis = list(title = "Date (year)",
                         type = "date"),
            yaxis = list(title = "Volume ($)"))
 
