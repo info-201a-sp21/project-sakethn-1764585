@@ -3,19 +3,14 @@ source("scripts/dependencies.R")
 
 ##### Home Page #####
 introduction_page <- fluidPage(
-  tags$head(
-    tags$link(rel = "stylesheet", type = "text/css", href = "app.css"),
-    tags$style(HTML("
-                    body {
-                      margin: 0;
-                    }"))
-  ),
+  includeCSS("www/app.css"),
   tags$div(tags$div(
-    h1("Cryptocurrencies: A Data Driven Analysis"),
+    h1("Cryptocurrencies: A Data Driven Analysis")
+      %>% tagAppendAttributes(class = "glow"),
     p(em("Overview: "), "Cryptocurrencies are a form of currency where the value
       comes not from a trust in any government/centralized authority, but
       rather from a trust in cryptography and the mathematical properties
-      of a data structure known as the blockchain. ") %>%
+      of a data structure known as the blockchain.") %>%
       tagAppendAttributes(style = "width: 500px;"),
   ) %>%
     tagAppendAttributes(class = "titleStyle")) %>%
@@ -26,6 +21,7 @@ introduction_page <- fluidPage(
 
 ##### About Page #####
 about_content <- fluidPage(
+  includeCSS("www/app.css"),
   h2("Questions:"),
   p("Here are some of the questions we would like to answer regarding
       these technologies"),
@@ -49,7 +45,7 @@ about_content <- fluidPage(
 about_page <- tabPanel(
   "About",
   about_content
-)
+) %>% tagAppendAttributes(class = "thin-center")
 
 home_page <- tabPanel(
   "Home Page",
@@ -108,7 +104,7 @@ page_one <- tabPanel(
     mainPanel = p1_main
   ),
   position = "left"
-)
+) %>% tagAppendAttributes(class = "thin-center")
 
 ##### Interactive Page Two #####
 # Create data frame that includes specific years
@@ -120,29 +116,27 @@ years <- c("2013", "2014", "2015", "2016", "2017", "2018",
            "2019", "2020", "2021")
 
 # Page two side bar
-page_two_sidebar_content <- sidebarPanel(theme = "app.css",
-                                         selectInput(
-                                           inputId = "year_input",
-                                           label = "Choose a Year to Examine",
-                                           choices = years,
-                                           selected = 2021
-                                         ))
+page_two_sidebar_content <- sidebarPanel(
+  selectInput(
+    inputId = "year_input",
+    label = "Choose a Year to Examine",
+    choices = years,
+    selected = 2021
+  )
+)
 
 # Page two main panel
-page_two_main_content <- mainPanel(theme = "app.css",
-                                   plotlyOutput("page_two_chart")
-)
+page_two_main_content <- mainPanel(plotlyOutput("page_two_chart"))
 
 # Combine panels to create page 2 (interactive)
 page_two <- tabPanel(
-  theme = "app.css",
   "Importance by Volume",
   titlePanel("Most Important Cryptocurrencies in Day to Day Usage"),
   sidebarLayout(
     page_two_sidebar_content,
     page_two_main_content),
   fluidPage(
-    theme = "app.css",
+    includeCSS("www/app.css"),
     tags$h2("Interpretation"),
     tags$p(paste0(
       "Through this chart it is evident that there was a trend of Bitcoin"
@@ -158,7 +152,7 @@ page_two <- tabPanel(
       , " 2013 and have somewhat maintained volume through the past eight"
       , " years."))
   )
-)
+) %>% tagAppendAttributes(class = "thin-center")
 
 ##### Interactive Page Three #####
 source("scripts/page3.R")
@@ -170,7 +164,7 @@ page_three <- tabPanel(
     sidebarPanel = side,
     mainPanel = main
   )
-)
+) %>% tagAppendAttributes(class = "thin-center")
 
 summary <- tabPanel(
   title = "Takeaways",
@@ -197,7 +191,7 @@ summary <- tabPanel(
   img(src = "both_2021.png"),
   br(),
   p(sum5)
-)
+) %>% tagAppendAttributes(class = "thin-center")
 
 ##### Navigation Bar (Overall Project) #####
 ui <- navbarPage(
