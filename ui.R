@@ -38,10 +38,41 @@ home_page <- tabPanel(
 )
 
 ##### Interactive Page One #####
+
+# Page One Sidebar Panel
+p1_side<-sidebarPanel(
+  h2("Cryptocurrency Comparison"),
+  # Create Check boxes
+  checkboxGroupInput(
+    inputId = "checkboxInput",
+    label = h3("Choose one or more cryptocurrencies"),
+    choices = list("Aave" = 'AAVE', "Binance" = 'BNB', "Cardano" = 'ADA',
+                   "Chainlink" = 'LINK', "Cosmos" = 'ATOM', "Doge" = 'DOGE',
+                   "Eos" = 'EOS', "Ethereum" = 'ETH', "Iota" = 'MIOTA',
+                   "Litecoin" = 'LTC', "Monero" = 'XMR', "Polkadot" =
+                     'DOT', "Tether" = 'USDT', "USD Coin" = 'USDC', 
+                   "XRP" = 'XRP'),
+    selected = 'DOGE'
+  )) 
+#Page One main Panel
+
+p1_main<-  mainPanel(
+  h2("Graphs"),
+  plotlyOutput(outputId = "page_one_chart_price"),
+  br(),
+  plotlyOutput(outputId = "page_one_chart_market")
+)
+
+# Full Page One
 page_one <- tabPanel(
   "Growth Impact",
-  titlePanel("Impact of Growth"),
-)
+  titlePanel("Impact of Bitcoin Growth on Smaller Coins"),
+  sidebarLayout(
+    sidebarPanel = p1_side,
+    mainPanel = p1_main
+  ),
+  position = "left"
+) 
 
 ##### Interactive Page Two #####
 # Create data frame that includes specific years
