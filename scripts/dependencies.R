@@ -38,6 +38,7 @@ get_date <- function(date) {
     as.Date(substr(date, 1, 10), format = "%Y-%m-%d")
 }
 all_coins <- all_coins %>% mutate(Date = get_date(Date))
+
 slim_data <- function(data) {
   data %>%
     mutate(Date = format(Date, "%Y-%m")) %>%

@@ -8,6 +8,7 @@
 #
 
 library(shiny)
+library(plotly)
 
 ##### Home Page #####
 introduction_page <- fluidPage(
@@ -58,9 +59,9 @@ p1_side<-sidebarPanel(
 
 p1_main<-  mainPanel(
   h2("Graphs"),
-  plotlyOutput(outputId = "page_one_chart_price"),
+  plotlyOutput("page_one_chart_price"),
   br(),
-  plotlyOutput(outputId = "page_one_chart_market")
+  plotlyOutput("page_one_chart_market")
 )
 
 # Full Page One

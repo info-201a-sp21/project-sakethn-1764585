@@ -3,12 +3,26 @@
 # Load Data
 source("scripts/dependencies.R")
 source("ui.R")
-
+source("Page_1/charts1.R")
 # Load Library
 library(shiny)
 
 # Define server logic required to draw a histogram
 shinyServer(function(input, output) {
+    
+    #### PAGE ONE GRAPHS####
+    source("Page_1/charts1.R")
+    
+   output$page_one_chart_price <- renderPlotly({
+        selected_coin <- input$checkboxInput
+        draw_da_plot_price(all_coins, selected_coin)
+        })
+        
+    output$page_one_chart_market <- renderPlotly({
+        selected_coin <- input$checkboxInput
+        draw_da_plot_market(all_coins, selected_coin)
+        })
+    
 
     ##### PAGE TWO CHART #####
     output$page_two_chart <- renderPlotly({
