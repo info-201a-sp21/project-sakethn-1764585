@@ -94,20 +94,20 @@ p1_main<-  mainPanel(
   p(introduction),
   br(),
                      
-  h3("Why compare Bitcoin?"),
-  hr(),
-  p(question),
-  br(),
-  
-  h2("Graphs"),
   plotlyOutput("page_one_chart_price"),
   br(),
   plotlyOutput("page_one_chart_market"),
   br(),
   
+  h3("Why compare Bitcoin?"),
+  hr(),
+  p(question),
+  br(),
   h3("What can we learn from this?"),
   hr(),
-  p(summ)
+  p(summ),
+  br(),
+  p(summ1)
 )
 
 # Full Page One
