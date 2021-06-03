@@ -9,6 +9,7 @@
 
 library(shiny)
 library(plotly)
+library(shinyWidgets)
 source("scripts/dependencies.R")
 
 # Load Data
@@ -68,14 +69,15 @@ home_page <- tabPanel(
 )
 
 ##### Interactive Page One #####
-
+source("Page_1/descriptions.R")
 # Page One Sidebar Panel
 p1_side<-sidebarPanel(
   h2("Cryptocurrency Comparison"),
+  hr(),
   # Create Check boxes
-  checkboxGroupInput(
+  prettyCheckboxGroup(
     inputId = "checkboxInput",
-    label = h3("Choose one or more cryptocurrencies"),
+    label = "Choose one or more cryptocurrencies",
     choices = list("Aave" = 'AAVE', "Binance" = 'BNB', "Cardano" = 'ADA',
                    "Chainlink" = 'LINK', "Cosmos" = 'ATOM', "Doge" = 'DOGE',
                    "Eos" = 'EOS', "Ethereum" = 'ETH', "Iota" = 'MIOTA',
@@ -87,10 +89,25 @@ p1_side<-sidebarPanel(
 #Page One main Panel
 
 p1_main<-  mainPanel(
+  h3("Introduction to Price and Market Cap"),
+  hr(),
+  p(introduction),
+  br(),
+                     
+  h3("Why compare Bitcoin?"),
+  hr(),
+  p(question),
+  br(),
+  
   h2("Graphs"),
   plotlyOutput("page_one_chart_price"),
   br(),
-  plotlyOutput("page_one_chart_market")
+  plotlyOutput("page_one_chart_market"),
+  br(),
+  
+  h3("What can we learn from this?"),
+  hr(),
+  p(summ)
 )
 
 # Full Page One
@@ -156,6 +173,14 @@ page_three <- tabPanel(
   )
 )
 
+summary <- tabPanel(
+  title = "Takeaways",
+  titlePanel("Important Takeaways"),
+  h2("Growth Impact"),
+  h2("Importance by Volume"),
+  h2("Bitcoin vs Ethereum")
+)
+
 ##### Navigation Bar #####
 ui <- navbarPage(
   "Cryptocurrency Analysis",
@@ -163,5 +188,6 @@ ui <- navbarPage(
   about_page,
   page_one,
   page_two,
-  page_three
+  page_three,
+  summary
 )

@@ -13,6 +13,7 @@ shinyServer(function(input, output) {
     
     #### PAGE ONE GRAPHS####
     source("Page_1/Charts1.R")
+    source("Page_1/descriptions.R")
     
    output$page_one_chart_price <- renderPlotly({
         selected_coin <- input$checkboxInput
