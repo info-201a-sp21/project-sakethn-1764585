@@ -57,7 +57,7 @@ home_page <- tabPanel(
 )
 
 ##### Interactive Page One #####
-source("Page_1/descriptions.R")
+source("scripts/page1.R")
 
 # Page One Sidebar Panel
 p1_side <- sidebarPanel(

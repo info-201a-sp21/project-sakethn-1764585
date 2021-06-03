@@ -4,7 +4,7 @@ source("scripts/dependencies.R")
 # Define server logic required to draw a different graphs/diagrams
 server <- shinyServer(function(input, output) {
     #### PAGE ONE GRAPHS####
-    source("Page_1/Charts1.R")
+    source("scripts/page1.R")
 
     output$page_one_chart_price <- renderPlotly({
         selected_coin <- input$checkboxInput
