@@ -1,10 +1,13 @@
 library(dplyr)
+library(shiny)
 library(knitr)
 library(plotly)
 library(ggplot2)
 library(stringr)
 library(quantmod)
 library(kableExtra)
+library(shinythemes)
+library(shinyWidgets)
 
 knitr::opts_chunk$set(echo = TRUE)
 
@@ -47,4 +50,7 @@ slim_data <- function(data) {
     mutate(Date = as.Date(paste0(Date, "-01"), format = "%Y-%m-%d"))
 }
 
-
+# Create data frame that includes specific years
+data_by_year <- all_coins %>%
+  group_by(Date) %>%
+  mutate(Date = substr(Date, 0, 4))

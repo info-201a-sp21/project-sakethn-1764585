@@ -1,14 +1,7 @@
-# Final Application
+# Get Dependencies
+source("ui.R")
+source("server.R")
+source("scripts/dependencies.R")
 
-# Load Libraries
-library(shiny)
-library(tidyverse)
-library(plotly)
-library(shinyWidgets)
-
-# Use source() to execute the app and define the UI Value and Server Function
-source('ui.R')
-source('server.R')
-
-# Run the application 
+# Entry Point into overall application
 shinyApp(ui = ui, server = server)
