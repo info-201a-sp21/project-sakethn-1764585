@@ -10,6 +10,7 @@ dates_last_year <- function(data) {
                  as.Date("2020-12-31")))
 }
 
+# Create a table that summarizes crypto data
 summary_table <- function(data) {
   dates_last_year(data) %>%
   group_by(Name) %>%
@@ -23,6 +24,7 @@ summary_table <- function(data) {
          min_price, marketcap_change, volume_change)
 }
 
+# Convert data to a summary table in kable format
 get_summary_kable <- function(data) {
   kable(
     summary_table(data),

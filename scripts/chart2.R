@@ -1,3 +1,4 @@
+# Get dependencies
 source("scripts/dependencies.R")
 
 mkt_bar_graph <- function(coins) {
@@ -6,6 +7,7 @@ mkt_bar_graph <- function(coins) {
     mutate(max_mkt_cap = round(max(Marketcap), 2)) %>%
     slice(1) %>%
     select(Symbol, max_mkt_cap)
+
   mkt_max <- ggplotly(ggplot(data = max_coin_mktcap) +
     geom_col(mapping = aes(x = Symbol, y = max_mkt_cap, color = Symbol,
                            fill = Symbol)) +
@@ -23,6 +25,7 @@ vol_bar_graph <- function(coins) {
     mutate(max_vol = round(max(Volume), 2)) %>%
     slice(1) %>%
     select(Symbol, max_vol)
+
   vol_max <- ggplotly(ggplot(data = max_vol_mktcap) +
                         geom_col(mapping = aes(x = Symbol, y = max_vol,
                                                color = Symbol, fill = Symbol)) +

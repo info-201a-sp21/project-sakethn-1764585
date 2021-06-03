@@ -1,8 +1,8 @@
 source("scripts/dependencies.R")
 
+# Used to get summary pieces of coin data
 get_summary_info <- function(coins) {
   ret <- list()
-  # of crypto currencies
   ret$num_coins <- length(unique(coins$Name))
   ret$earliest_date <- min(coins$Date)
   ret$latest_date <- max(coins$Date)

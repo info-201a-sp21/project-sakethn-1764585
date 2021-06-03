@@ -1,15 +1,15 @@
+# Get dependencies
 source("scripts/dependencies.R")
 
 # Draws a candlestick plot for a given cryptocurrency
 # reference https://plotly.com/r/candlestick-charts
 draw_plot <- function(dframe, crypto_name, start_year = 2015, end_year = 2021) {
-  # extract year from all dates in dframe
+  # Extract year from all dates in dframe
   dframe <- dframe %>%
     mutate(year = format(as.Date(pull(., Date)), "%Y")) %>%
     filter(year >= as.numeric(start_year), year <= as.numeric(end_year))
 
-
-  # create candlestick plot (high, low, open, close)
+  # Create candlestick plot (high, low, open, close)
   candle_plot <- plot_ly(data = dframe,
                          name = "Price Direction",
                          x = ~Date,
@@ -23,7 +23,7 @@ draw_plot <- function(dframe, crypto_name, start_year = 2015, end_year = 2021) {
                         rangeslider = list(visible = FALSE)),
            yaxis = list(title = "Price ($)"))
 
-  # find direction for each day ('increasing' if close >= open)
+  # Find direction for each day ('increasing' if close >= open)
   for (i in 1:length(dframe[, 1])) {
     if (dframe$Close[i] >= dframe$Open[i]) {
       dframe$direction[i] <- "increasing"
@@ -32,7 +32,7 @@ draw_plot <- function(dframe, crypto_name, start_year = 2015, end_year = 2021) {
     }
   }
 
-  # create volume bar chart
+  # Create volume bar chart
   vol_plot <- plot_ly(data = dframe,
                       name = "Volume",
                       x = ~Date,
@@ -44,7 +44,7 @@ draw_plot <- function(dframe, crypto_name, start_year = 2015, end_year = 2021) {
                         type = "date"),
            yaxis = list(title = "Volume ($)"))
 
-  # combine plots together
+  # Combine plots together
   subplot(candle_plot, vol_plot,
           heights = c(0.8, 0.2),
           nrows = 2,

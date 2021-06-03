@@ -1,3 +1,4 @@
+# A script for common things shared between scripts
 library(dplyr)
 library(shiny)
 library(knitr)
@@ -40,6 +41,7 @@ all_coins <- rbind(aave, binance, bitcoin, cardano, chainlink, cosmos, doge,
 get_date <- function(date) {
     as.Date(substr(date, 1, 10), format = "%Y-%m-%d")
 }
+
 all_coins <- all_coins %>% mutate(Date = get_date(Date))
 
 slim_data <- function(data) {
