@@ -59,3 +59,19 @@ main <- mainPanel(
   hr(),
   p(HTML(obs))
 )
+
+##### Summary #####
+
+sum1 <- "In response to the question, \"how does the volatility of Bitcoin and Ethereum compare over time between 2015 and 2021?\", we can say that Ethereum has generally shown higher volatility and is thus a riskier investment than Bitcoin."
+
+sum2 <- "Though it may be difficult to tell from our candlestick charts alone, remember that volatility is a measure of risk in an asset, or how quickly that asset is expected to fluctuate over time. We can get a broad sense of how volatility has changed in the history of Bitcoin and Ethereum, by looking at how rapidly their prices fluctuate throughout their history."
+
+sum3 <- "The 2018 peaks, for instance, are shown below. Though the scales are different, we can see that Bitcoin has shown a generally steadier climb than Ethereum, with Ethereum experiencing steeper slopes and a lower increase in volume. Usually, this lower volume indicates less trading activity or \"buzz\" in the Ethereum market, which can also contribute to its higher volatility or risk."
+
+img_2018 <- img(src = "Page_3/both_2018")
+
+sum4 <- "On the other hand, at first glance the 2021 peaks imply that Bitcoin is more volatile than Ethereum, and for the most part it is. However, let's factor in the different price scales, with Bitcoin experiencing a 166% ($20,000) increase in price since the beginning of the year, while Ethereum's price rose by almost 400% ($1500). We can also see that Bitcoin saw a massive spike in volume traded around the peak, which represents the massive sell-out that would ensue after reaching such an unprecedented peak."
+
+img_2021 <- img(src = "Page_3/both_2021")
+
+sum5 <- "It's worth noting that candlestick charts alone will not be able to tell us everything about a cryptocurrency, much less the unpredictable external factors that can drive the price up or down. It's also somewhat difficult to holistically and directly compare Bitcoin with Ethereum, as they are inherently different cryptocurrencies that serve separate functions. In spite of these limitations, it is apparent that Bitcoin (being the first cryptocurrency) has had more time than Ethereum to stabilize its market, and continued public interest has continued to decrease its overall volatility."

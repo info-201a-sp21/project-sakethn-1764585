@@ -34,8 +34,8 @@ introduction_page <- fluidPage(
   ) %>%
     tagAppendAttributes(class = 'titleStyle')) %>%
     tagAppendAttributes(class = 'bgStyle')
-  
-  
+
+
 )
 
 ##### About Page #####
@@ -93,12 +93,12 @@ p1_main<-  mainPanel(
   hr(),
   p(introduction),
   br(),
-                     
+
   plotlyOutput("page_one_chart_price"),
   br(),
   plotlyOutput("page_one_chart_market"),
   br(),
-  
+
   h3("Why compare Bitcoin?"),
   hr(),
   p(question),
@@ -183,7 +183,17 @@ summary <- tabPanel(
     interest in crypto currency has been the highest, particularlly the end of 2017 and the end of 2020
     til now."),
   h2("Importance by Volume"),
-  h2("Bitcoin vs Ethereum")
+  p("Through this chart it is evident that there was a trend of Bitcoin having
+    the highest volume for quite a few years. There is a distinct change however
+    when we look at the 2019 data when Tether passes Bitcoin in volume."),
+  h2("Bitcoin vs Ethereum"),
+  p(sum1),
+  p(sum2),
+  p(sum3),
+  img(src = "Page_3/both_2018.png"),
+  p(sum4),
+  img(src = "Page_3/both_2021.png"),
+  p(sum5)
 )
 
 ##### Navigation Bar #####
