@@ -3,7 +3,7 @@
 # Load Data
 source("scripts/dependencies.R")
 source("ui.R")
-source("Page_1/charts1.R")
+source("Page_1/Charts1.R")
 # Load Library
 library(shiny)
 library(dplyr)
@@ -12,7 +12,7 @@ library(dplyr)
 shinyServer(function(input, output) {
     
     #### PAGE ONE GRAPHS####
-    source("Page_1/charts1.R")
+    source("Page_1/Charts1.R")
     
    output$page_one_chart_price <- renderPlotly({
         selected_coin <- input$checkboxInput
