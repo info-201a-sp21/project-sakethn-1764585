@@ -41,3 +41,7 @@ strong {
 a:hover {
   color: salmon;
 }
+
+img {
+  width: 100%;
+}
